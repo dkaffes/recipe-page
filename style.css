@@ -1,0 +1,199 @@
+/**************************/
+/* Mobile-first design */
+/**************************/
+/* Custom variables for colors, font-weights and margins*/
+:root {
+  --clr-prm-nutmeg: hsl(14, 45%, 36%);
+  --clr-prm-darkraspberry: hsl(332, 51%, 32%);
+  --clr-ntr-white: hsl(0, 0%, 100%);
+  --clr-ntr-rosewhite: hsl(330, 100%, 98%);
+  --clr-ntr-eggshell: hsl(30, 54%, 90%);
+  --clr-ntr-lightgrey: hsl(30, 18%, 87%);
+  --clr-ntr-wengebrown: hsl(30, 10%, 34%);
+  --clr-ntr-darkcharcoal: hsl(24, 5%, 18%);
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --marg-bott-s: 1rem;
+  --marg-bott-l: 1.5rem;
+}
+
+/* Local fonts */
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Young Serif";
+  src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf")
+    format("truetype");
+}
+
+/* CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General component styling */
+body {
+  min-height: 100vh; /* is it redundant? */
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  color: var(--clr-ntr-wengebrown);
+  background-color: var(--clr-ntr-eggshell);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.wrapper {
+  max-width: 40rem; /* 640px*/
+  background-color: var(--clr-ntr-white);
+}
+
+/* Image */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Headings */
+h1,
+h2 {
+  font-family: "Young Serif", serif;
+  font-weight: var(--fw-regular);
+  margin-bottom: var(--marg-bott-l);
+}
+
+h1 {
+  font-size: 2.3rem;
+  color: var(--clr-ntr-darkcharcoal);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--clr-prm-nutmeg);
+}
+
+.preparation-time {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-prm-darkraspberry);
+  margin-bottom: var(--marg-bott-s);
+}
+
+/* Lists */
+ul,
+ol {
+  padding-left: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: var(--marg-bott-s);
+}
+
+li {
+  padding-left: 1rem;
+  margin-bottom: var(--marg-bott-s);
+}
+
+li::marker {
+  color: var(--clr-prm-nutmeg);
+  font-weight: var(--fw-bold);
+}
+
+.preparation-list > li::marker {
+  color: var(--clr-prm-darkraspberry);
+}
+
+/* Boxes with text content*/
+.text-box {
+  margin: 2rem;
+}
+
+.text-intro {
+  line-height: 1.6;
+  margin-bottom: var(--marg-bott-l);
+}
+
+.preparation {
+  background-color: var(--clr-ntr-rosewhite);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: var(--marg-bott-l);
+}
+
+/* Separator */
+hr {
+  margin: 2rem 0;
+  border: 1px solid var(--clr-ntr-lightgrey);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  line-height: 2;
+}
+
+th,
+td {
+  width: 50%;
+  border-bottom: 1px solid var(--clr-ntr-lightgrey);
+  padding: 0.8rem 0;
+}
+
+th {
+  font-weight: var(--fw-regular);
+  text-align: left;
+  padding-left: 2rem;
+}
+
+td {
+  font-weight: var(--fw-bold);
+  color: var(--clr-prm-darkraspberry);
+}
+
+tr:last-child > th,
+tr:last-child > td {
+  border-bottom: none;
+}
+
+/* Footer */
+.attribution {
+  font-size: 0.6875rem; /* 11px */
+  text-align: center;
+  margin-block-end: 2rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/**************************/
+/* MEDIA QUERIES */
+/* Slight changes at 640px for the wrapper and the image */
+/**************************/
+@media (min-width: 40rem) {
+  .wrapper {
+    max-width: 45rem; /* 720px*/
+    margin: 1rem;
+    border-radius: 15px;
+  }
+
+  .image-box {
+    overflow: hidden;
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  img {
+    border-radius: 15px;
+  }
+}
